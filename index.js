@@ -34,7 +34,7 @@ async function run() {
         });
 
         pull.compileReviews(reviews);
-        pull.compileChecks(checks);
+        pull.compileChecks(checks, process.env.GITHUB_WORKFLOW);
         console.log(`[data] pull (checks + reviews): ${JSON.stringify(pull)}`);
 
         console.log(`merge: ${pull.canMerge(config)}`);
